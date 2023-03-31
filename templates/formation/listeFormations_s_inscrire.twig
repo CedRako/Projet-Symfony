@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="login-box">
+
+Formations disponibles : <br><br>
+<button> <a href="{{path('app_affInscriptionId')}}">Voir vos Formations </a></button><br><br>
+
+{% for formation in ensFormation %}
+   {# {% if formation.datedebut|date("Y/m/d") >= ""|date("Y/m/d") %} #}
+         <b> Sujet de la formation : </b> {{formation.leProduit.libelle}}</br>
+         <b>Date de la formation :</b> {{ formation.dateDebut|date("d/m/Y") }}</br>
+         <b>Durée de la formation :</b> {{formation.nbreHeures}} heures </br>
+         <b>Le département : </b> {{formation.departement}}</br>
+        <a href="{{path('app_inscription_attente', {'id':formation.id})}}">S'inscrire</a><br><br>
+    {#{% endif %}#}
+{% endfor %}
+</div>
+{% endblock %}

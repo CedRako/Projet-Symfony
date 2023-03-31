@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="login-box">
+
+
+{% if (message) %}
+    {{message}}
+{% endif %}
+{% for insc in ensInscs %}
+    Voici la liste de formation de : <b> {{ insc.lEmploye.nom }}  {{ insc.lEmploye.prenom }}</b><br>
+    Département : <b> {{ insc.laFormation.departement }}</b><br>
+    Formation Inscrite : <b>{{ insc.laFormation.leProduit.libelle }}</b><br>
+    Statut :<b>{{insc.statut}}</b><br><br>
+{% endfor %}
+
+</div>
+{% endblock %}

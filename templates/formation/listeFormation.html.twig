@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="login-box">
+
+
+Voici la liste des formations : </br>
+{%if (message) %}
+    {{message}}
+{% endif %}
+
+
+{% for formation in ensFormation %}
+    <b>Sujet de la formation : </b> {{formation.leProduit.libelle}}</br>
+    <b>Date de la formation :</b> {{ formation.dateDebut|date("d/m/Y") }}</br></td>
+    <b>Durée de la formation :</b> {{formation.nbreHeures}} heures </br>
+    <b>Le département : </b> {{formation.departement}}</br>
+    <b> Description de la formation : </b> {{formation.Description}}</br>
+    <button> <a href="{{path('app_formation_modif', {'id': formation.id})}}">Modifier la formation</a></button></br>
+    <button> <a href="{{path('app_formation_sup', {'id': formation.id})}}">Supprimer la formation</a></button></br>
+    <button> <a href="{{path('app_InscFormationAttente', {'id': formation.id})}}">Voir les inscriptions en Attente</a></button></br></br>
+{% endfor %}
+<button> <a href="{{path('app_ajout_formation')}}">Ajouter une formation</a></button>
+<button> <a href="{{path('app_liste_employe')}}">Voir les formations d'un employé</a></button>
+
+</div>
+{% endblock %}
