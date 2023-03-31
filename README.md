@@ -1,7 +1,7 @@
 # Projet-Symfony
 Projet Symfony 
 
-Les Identifiants de l'administrateur : Login = ab et mdp = ab
+Les Identifiants de l'administrateur : Login = Buffbappe et mdp = Buffbappe 
 
 L'employé, le mot de passe équivaut au login pour faciliter la connexion.
 
